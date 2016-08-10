@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Timelight - time-triggered HTML highlighting</title>
+        <!--<script type="text/javascript" src="timelight-0.1.js"></script>-->
+        <!--<script type="text/javascript" src="timelight-0.1.min.js"></script>-->
+        <script type="text/javascript">
+            window.onload=function(){function f(){ids=new Array,null!=a[Math.floor(media.currentTime*e)]&&(ids=a[Math.floor(media.currentTime*e)]),aecount=c.length;for(var f=0;f<aecount;f++)ids.indexOf(c[aecount-f-1])<0&&(document.querySelectorAll('[data-tlid="'+c[aecount-f-1]+'"]')[0].style.backgroundColor=b[c[aecount-f-1]],c.splice(aecount-f-1,1));for(var f=0;f<ids.length;f++)!c.indexOf(ids[f])>=0&&(document.querySelectorAll('[data-tlid="'+ids[f]+'"]')[0].style.backgroundColor=d,c.push(ids[f]))}var a=new Array,b=new Array,c=new Array,d="rgba(255,30,30,0.1)",e=100;for(media=document.querySelectorAll('[data-tlid="media"]')[0],media.addEventListener("timeupdate",function(){f()}),hl=document.querySelectorAll("[data-tl]"),i=0;i<hl.length;i++)for(hlArr=hl[i].dataset.tl.split("-"),start=hlArr[0]*e,end=hlArr[1]*e,(null==start||null==end||start>end)&&alert("error in timelight&quot;s @tl: inconsistent values."),thisID="e"+i,hl[i].dataset.tlid=thisID,b[thisID]=""!=hl[i].style.backgroundColor?hl[i].style.backgroundColor:"transparent",j=start;j<=end;j++)a[j]||(a[j]=new Array),a[j].push(thisID)};
+        </script>
+    </head>
+    <body>
+        <audio data-tlid="media" src="https://corpora.uni-hamburg.de/drupal/de/islandora/object/recording:demo_AnneWill/datastream/MP3/AnneWill.mp3" controls="controls"></audio>
+        <p>
+            <span data-tl="0.0-2.7" style="background-color:#ffeedd;">Lorem ipsum dolor sit amet,</span> 
+            <span data-tl="2.7-4.5">consetetur sadipscing elitr,</span> 
+            <span data-tl="4.5-9.7">sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,</span> 
+            <span data-tl="9.7-11.2">sed diam voluptua.</span> 
+            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+        </p>
+        <p data-tl="10.0-20.0">    
+            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+        </p>
+    </body>
+</html>
