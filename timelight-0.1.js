@@ -3,7 +3,7 @@ window.onload = function () {
     var t = new Array();
     var ob = new Array();
     var ae = new Array();
-    var hb = "rgba(228,233,245,0.1)";
+    var hb = "rgba(228,233,245,1.0)";
     var tf = 100;
    
     media = document.querySelectorAll('[data-tlid="media"]')[0];    
