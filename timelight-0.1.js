@@ -24,7 +24,8 @@ window.onload = function () {
        hl[i].dataset.tlid = thisID;
        
        //add original background-color to origBackground
-       ob[thisID] = (hl[i].style.backgroundColor!='' ? hl[i].style.backgroundColor : 'transparent');
+       tb = window.getComputedStyle( hl[i] , null).getPropertyValue( 'background-color' );
+       ob[thisID] = (null != tb ? tb : 'transparent');
        
        //add times to array
        for(j=start; j<=end; j++){
@@ -32,6 +33,8 @@ window.onload = function () {
            t[j].push(thisID);
        }       
     }
+    
+    console.log(ob);
     
     function tlProc(){
         
