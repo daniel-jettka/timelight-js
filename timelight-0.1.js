@@ -13,8 +13,8 @@ window.onload = function () {
     //iterate over element with @data-tl
     for (i=0; i<hl.length; i++) {
        hlArr = hl[i].dataset.tl.split('-');
-       start = hlArr[0] * tf;
-       end = hlArr[1] * tf;
+       start = Math.round(hlArr[0] * tf);
+       end = Math.round(hlArr[1] * tf);
        
        //test consistency of @data-tl's
        if(!(start!=null) || !(end!=null) || (start > end)){ alert('error in timelight&quot;s @tl: inconsistent values.'); }
